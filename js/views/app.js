@@ -1,4 +1,4 @@
-// js/view/app.js
+// js/views/app.js
 
 var todoApp = todoApp || {};
 
@@ -65,12 +65,12 @@ todoApp.Appview = Backbone.View.extend({
 		}
 
 		this.allCheckbox.checked = !remaining;
-	}
+	},
 
 	// Add 1 item to the list by creating a view for it, then appending its element to the <ul>.
 	// Creates an instance of a view, renders it, and appends the resulting element to the Todo list. 
-	addOne: function() {
-		var view = new todoApp.TodoView({ model: todo});
+	addOne: function(todomodel) {
+		var view = new todoApp.TodoView({ model: todomodel});
 		$('#todo-list').append( view.render().el );
 	},
 

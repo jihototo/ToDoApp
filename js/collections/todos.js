@@ -25,9 +25,7 @@ var TodoList = Backbone.Collection.extend({
 	// apply is a method of javascript functions that allows you to set context of a method.
 	// context as first parameter, then an array. 
 	remaining: function() {
-		return this.filter(function(each_todo) {
-			return this.without.apply( this, this.completed() );
-		});
+		return this.without.apply( this, this.completed() );
 	},
 
 	// Keeping the todo items in sequential order, despite the fact that its being saved unorderly manner in the Local Storage. 
